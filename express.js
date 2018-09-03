@@ -6,7 +6,7 @@ const PORT =  process.env.PORT || 5000;
 app.get('/', (req, res) => {
 
  
-res.send({data: 'Hi there'});
+res.send({msg: 'Welcome to BN & Rana Almirahs P Ltd.'});
 
 })
 
