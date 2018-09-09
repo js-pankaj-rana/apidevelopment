@@ -2,14 +2,14 @@
   "name": "apidevelopment",
   "version": "1.0.0",
   "description": "",
-  "main": "express.js",
+  "main": "index.js",
   "engines": {
     "node": "8.11.2",
     "npm": "6.2.0"
   },
   "scripts": {
-    "start": "node express.js",
-    "dev": "nodemon express.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "author": "Pankaj Rana",
   "license": "ISC",
