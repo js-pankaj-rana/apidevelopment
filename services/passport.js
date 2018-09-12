@@ -13,7 +13,7 @@ passport.use(
         (accessToken, profileToken, profile, done) => {
             console.log('profile.id==>',profile.id);
             new User({
-                googleID: profile.id
+                googleId: profile.id
             }).save().then( (newUser) => 
                console.log('new user created:' + newUser)
             );
