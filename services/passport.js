@@ -11,14 +11,12 @@ passport.use(
         callbackURL: '/auth/google/callback'
         },
         (accessToken, profileToken, profile, done) => {
+            console.log('profile.id==>',profile.id);
             new User({
                 googleID: profile.id
-            }).save();
-            // console.log(
-                // 'accessToken==>',accessToken,
-                // 'profileToken==>', profileToken,
-                // 'profile==>', profile,
-                // 'done==>', done);
-            }
+            }).save().then( (newUser) => 
+               console.log('new user created:' + newUser)
+            );
+        }
         )
     );
