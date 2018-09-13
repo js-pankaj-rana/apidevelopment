@@ -2,7 +2,8 @@ const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const keys = require('../config/keys');
 
-passport.serializeUser( (user, done) => {
+
+/* passport.serializeUser( (user, done) => {
     done(null, user.id);
 })
 
@@ -11,7 +12,7 @@ passport.deserializeUser( (id, done) => {
         done(null, user);
     });
    }
- );
+ ); */
 
 passport.use(new GoogleStrategy({
     clientID: keys.googleClientID,
