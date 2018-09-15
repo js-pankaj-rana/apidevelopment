@@ -25,7 +25,7 @@ mongoose.connect(
         } else {
             console.log('Connected to Server successfully!');
         }
-    } 
+    }
 );
 
 require('./routes/authRoutes')(app);
