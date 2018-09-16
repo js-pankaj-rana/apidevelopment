@@ -7,7 +7,10 @@ module.exports = app => {
         }
     ))
 
-    app.get('/auth/google/callback', passport.authenticate('google'));
+    app.get(
+        '/auth/google/callback',
+         passport.authenticate('google')
+        );
     
     app.get('/api/user_id', (req, res) => {
         res.send(req.user);
@@ -17,4 +20,25 @@ module.exports = app => {
         req.logout();
         res.send(req.user);
     })
+
+    app.get(
+            '/auth/facebook',
+            passport.authenticate('facebook')
+        );
+
+    app.get(
+        '/auth/facebook/callback',
+        passport.authenticate('facebook', { failureRedirect: '/login' }),
+        function(req, res) {
+        // Successful authentication, redirect home.
+        res.redirect('/');
+    });
+
+    /* app.get('/', 
+        passport.authenticate('bearer', { session: false }),
+        function(req, res) {
+            console.log(req.user);
+            //res.json(req.user);
+        }) */;
+        
 }
