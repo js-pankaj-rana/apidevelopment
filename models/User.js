@@ -3,9 +3,19 @@ const { Schema } = mongoose;
 
 const userSchema = new Schema({
     googleId: String,
+    userRegisterDate: {
+        type: Date,
+        default: Date.now
+    },
     facebookId: String,
-    userFullName: String,
-    userEmailId: String,
+    userFullName: {
+        type: String,
+    },
+    userEmailId: {
+        type:String,
+        lowercase: true,
+        unique
+    },
     userPhotos: String,
     userGender: String,
     userFirstName: String,

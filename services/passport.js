@@ -35,6 +35,7 @@ passport.use(new GoogleStrategy({
             else{
                 new User({
                     googleId : profile.id,
+                    userRegisterDate: new Date,
                     userFullName: profile.displayName,
                     userEmailId: profile.emails[0].value,
                     userPhotos: profile.photos[0].value,
