@@ -62,7 +62,8 @@ passport.use(new BearerStrategy( (id, done) => {
 passport.use(new FacebookStrategy({
     clientID: keys.facebookClientID,
     clientSecret: keys.facebookClientSecret,
-    callbackURL: "/auth/facebook/callback"
+    callbackURL: "/auth/facebook/callback",
+    proxy: true
   },
   function(accessToken, refreshToken, profile, cb) {
     User.findOne({ facebookId: profile.id}).then( exitingUser => {
