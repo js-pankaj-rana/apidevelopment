@@ -14,7 +14,7 @@ const userSchema = new Schema({
     userEmailId: {
         type:String,
         lowercase: true,
-        unique
+        unique: true
     },
     userPhotos: String,
     userGender: String,
