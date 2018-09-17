@@ -62,7 +62,7 @@ passport.use(new BearerStrategy( (id, done) => {
 passport.use(new FacebookStrategy({
     clientID: keys.facebookClientID,
     clientSecret: keys.facebookClientSecret,
-    callbackURL: "/auth/facebook/callback",
+    callbackURL: "/auth/facebook/callback&client_id=1978428739114034",
     proxy: true
   },
   function(accessToken, refreshToken, profile, cb) {
