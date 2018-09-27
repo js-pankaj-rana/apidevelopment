@@ -6,23 +6,12 @@ const productSchema = new Schema({
     productName: String,
     productPrice: Number,
     productStockNum: Number,
-    productDiscription: new Array({
-        productDoors: Number,
-        productTotalSelves: Number,
-        productApplicationType: Number,
-        productNeedFor: String,
-        productAvaiblityLocation: String,
-        productCondition: String,
-        productDimension: String,
-        productColor: String,
-        productMaterial: String,
-        productMirror: String,
-        productNumLocker: Number,
-        productSecretLocker: Number,
-        productWarranty: String,
-        productNote: String,
-        productMessage: String
-    })
+    productDiscription: Object,
+    productPublished: Boolean,
+    productAuthor: {
+        type: Schema.ObjectId,
+        ref: 'User'
+    } 
 })
 
 mongoose.model('products', productSchema);
