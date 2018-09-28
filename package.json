@@ -9,11 +9,14 @@
   },
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "nodmon": "nodemon index.js",
+    "client": "npm run client --prefix client",
+    "dev": "concurrently \"npm run dev\" \"npm run client\""
   },
   "author": "Pankaj Rana",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^4.0.1",
     "cookie-session": "^2.0.0-beta.3",
     "express": "^4.16.3",
     "mongoose": "^5.2.13",

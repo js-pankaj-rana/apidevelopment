@@ -11,6 +11,11 @@ module.exports = app => {
         '/auth/google/callback',
          passport.authenticate('google')
         );
+
+    app.post(
+        '/user/register',
+
+    );    
     
     app.get('/api/user_id', (req, res) => {
         res.send(req.user);

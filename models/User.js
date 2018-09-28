@@ -20,6 +20,7 @@ const userSchema = new Schema({
     userGender: String,
     userFirstName: String,
     userLastName: String,
+    userPassword: String
 })
 
 mongoose.model('users', userSchema);
